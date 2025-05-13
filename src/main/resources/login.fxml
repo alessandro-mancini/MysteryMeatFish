@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.LoginController">
+    <VBox>
+    <fx:include source="header.fxml"/>
+
+    <Label text="Email:"/>
+    <TextField fx:id="emailField"/>
+    <Label text="Password:"/>
+    <PasswordField fx:id="passwordField"/>
+    <Button text="Accedi" onAction="#handleLogin"/>
+    <Hyperlink text="Registrati" onAction="#goToRegister"/>
+    </VBox>
+</AnchorPane>
+

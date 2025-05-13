@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.ProductInfoController" spacing="10" padding="20">
+    <fx:include source="header.fxml"/>
+    <ImageView fx:id="productImage" fitWidth="300" preserveRatio="true"/>
+    <Label fx:id="productName" style="-fx-font-size: 24px;"/>
+    <Label fx:id="productDescription" wrapText="true"/>
+    <Label fx:id="productPrice" style="-fx-font-size: 18px;"/>
+    <Button text="Aggiungi al Carrello" onAction="#addToCart"/>
+</VBox>
+

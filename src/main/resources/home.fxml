@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="pane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
+
+        <VBox prefHeight="527.0" prefWidth="785.0">
+            <fx:include source="header.fxml" />
+            <Label style="-fx-font-size: 18px;" text="Prodotti in Evidenza"/>
+            <GridPane fx:id="products" hgap="20" vgap="20"/>
+
+        </VBox>
+
+</AnchorPane>

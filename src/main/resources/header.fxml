@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+    <HBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HeaderController" prefHeight="50.0" spacing="10" styleClass="bg-primary">
+        <ImageView fx:id="logoImage" fitHeight="50" preserveRatio="true" />
+        <Label prefHeight="54.0" prefWidth="274.0" styleClass="h3" text="MysteryMeatFish" />
+
+        <!-- Region che si espande orizzontalmente -->
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Button onAction="#goToHome" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Home" />
+        <Button onAction="#goToRegister" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Register" />
+        <Button onAction="#goToLogin" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Login" />
+        <Button onAction="#goToCart" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Carrello" />
+    </HBox>
+
