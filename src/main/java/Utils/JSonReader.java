@@ -18,9 +18,11 @@ public class JSonReader {
             .scheme("https")
             .host("mysterymeatfish.altervista.org")
             .addPathSegment("java")
-            .addPathSegment("tutti.php")
+            .addPathSegment("prodotti.php")
             .addQueryParameter("tipo", param)
             .build();
+
+        System.out.println(url);
 
         // Costruisce la richiesta HTTP GET
         Request request = new Request.Builder()

@@ -8,16 +8,29 @@
 <HBox prefHeight="300" prefWidth="300" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductInfoController">
     <VBox spacing="5">
         <ImageView fx:id="immagine" fitHeight="150" preserveRatio="true" />
-        <Label fx:id="nome" styleClass="text-primary" />
+        <Label fx:id="nome" styleClass="text-primary">
+            <font>
+                <Font name="Calibri Bold" size="18.0" />
+            </font>
+        </Label>
+
         <Label fx:id="tipo" styleClass="text-primary">
          <font>
             <Font name="Calibri Bold" size="18.0" />
-         </font></Label>
+         </font>
+        </Label>
+
         <Label fx:id="prezzo">
          <font>
-            <Font size="16.0" />
-         </font></Label>
-        <Label fx:id="prezzoSconto" />
+            <Font size="14.0" />
+         </font>
+        </Label>
+
+        <Label fx:id="prezzoSconto">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
         <Label fx:id="descrizione" />
     </VBox>
 </HBox>

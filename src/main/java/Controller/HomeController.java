@@ -1,6 +1,7 @@
 package Controller;
 
 import Utils.*;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +26,10 @@ public class HomeController {
         int column = 0;
         int row = 0;
 
-        mostraProdotti(diocane);
+
+        new Thread(() ->{
+            mostraProdotti(diocane);
+        }).start();
 
     }
 
@@ -34,19 +38,23 @@ public class HomeController {
         Button pressed = (Button) e.getSource();
         String category = pressed.getText();
 
-        mostraProdotti(ProductSerializer.serialize(JSonReader.sendRequest(category)));
+        productsGrid.getChildren().clear();
+        new Thread(() ->{
+            mostraProdotti(ProductSerializer.serialize(JSonReader.sendRequest(category)));
+        }).start();
+
     }
 
     @FXML
     public void mostraProdotti(ArrayList<Product> products) {
 
-        productsGrid.getChildren().clear();
 
-        int column = 0;
-        int row = 0;
 
-        for (Product product : products) {
 
+        Platform.runLater(() -> {
+            int column = 0;
+            int row = 0;
+            for (Product product : products) {
 
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/product-info.fxml"));
@@ -57,16 +65,17 @@ public class HomeController {
 
                 productsGrid.add(productCard, column, row);
 
+                column++;
 
-            column++;
-            if (column == 3) { // 3 elementi per riga
-                column = 0;
-                row++;
-            }
+                if (column == 3) { // 3 elementi per riga
+                    column = 0;
+                    row++;
+                }
 
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
         }
+        });
     }
 }

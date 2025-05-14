@@ -11,10 +11,10 @@
             <fx:include source="header.fxml" />
 
             <HBox>
-                <Button id="categoria" text="Tutti"/>
-                <Button id="categoria" text="Carne"/>
-                <Button id="categoria" text="Pesce"/>
-                <Button id="categoria" text="Salumi"/>
+                <Button id="categoria" onAction="#switchCategory" text="Tutti" styleClass="btn-primary"/>
+                <Button id="categoria" onAction="#switchCategory" text="Carne" styleClass="btn-primary"/>
+                <Button id="categoria" onAction="#switchCategory" text="Pesce" styleClass="btn-primary"/>
+                <Button id="categoria" onAction="#switchCategory" text="Salumi" styleClass="btn-primary"/>
             </HBox>
 
             <Label style="-fx-font-size: 18px;" text="Prodotti" />
