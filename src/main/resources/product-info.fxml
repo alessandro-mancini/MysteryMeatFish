@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.image.ImageView?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.ProductInfoController" spacing="10" padding="20">
-    <fx:include source="header.fxml"/>
-    <ImageView fx:id="productImage" fitWidth="300" preserveRatio="true"/>
-    <Label fx:id="productName" style="-fx-font-size: 24px;"/>
-    <Label fx:id="productDescription" wrapText="true"/>
-    <Label fx:id="productPrice" style="-fx-font-size: 18px;"/>
-    <Button text="Aggiungi al Carrello" onAction="#addToCart"/>
-</VBox>
-
+<HBox prefHeight="300" prefWidth="300" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductInfoController">
+    <VBox spacing="5">
+        <ImageView fx:id="immagine" fitHeight="150" preserveRatio="true" />
+        <Label fx:id="nome" styleClass="text-primary" />
+        <Label fx:id="tipo" styleClass="text-primary">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></Label>
+        <Label fx:id="prezzo">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+        <Label fx:id="prezzoSconto" />
+        <Label fx:id="descrizione" />
+    </VBox>
+</HBox>

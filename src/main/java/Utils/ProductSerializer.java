@@ -1,6 +1,5 @@
-package Objects;
+package Utils;
 
-import Objects.Product;
 import com.google.gson.*;
 
 import java.util.ArrayList;

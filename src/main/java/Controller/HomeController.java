@@ -1,19 +1,22 @@
 package Controller;
 
-import Objects.*;
-import com.google.gson.stream.JsonReader;
+import Utils.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import org.controlsfx.control.GridView;
+import javafx.scene.layout.HBox;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class HomeController {
 
     @FXML
-    GridPane products;
+    GridPane productsGrid;
 
     @FXML
     public void initialize(){
@@ -22,17 +25,47 @@ public class HomeController {
         int column = 0;
         int row = 0;
 
-        for (int i = 0; i < diocane.size(); i++) {
-            Product dioboia = diocane.get(i);
-            Label laolao = new Label(dioboia.getNome());
+        mostraProdotti(diocane);
+
+    }
 
 
-            products.add(laolao, column, row);
+    public void switchCategory(ActionEvent e){
+        Button pressed = (Button) e.getSource();
+        String category = pressed.getText();
+
+        mostraProdotti(ProductSerializer.serialize(JSonReader.sendRequest(category)));
+    }
+
+    @FXML
+    public void mostraProdotti(ArrayList<Product> products) {
+
+        productsGrid.getChildren().clear();
+
+        int column = 0;
+        int row = 0;
+
+        for (Product product : products) {
+
+
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/product-info.fxml"));
+
+                HBox productCard = (HBox) loader.load();
+                ProductInfoController controller = loader.getController();
+                controller.setData(product);
+
+                productsGrid.add(productCard, column, row);
+
 
             column++;
-            if (column == 3) { // 3 colonne per riga
+            if (column == 3) { // 3 elementi per riga
                 column = 0;
                 row++;
+            }
+
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
             }
         }
     }

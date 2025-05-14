@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.CartController">
-    <VBox>
+    <VBox AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
     <fx:include source="header.fxml"/>
     <Label text="Carrello" style="-fx-font-size: 24px;"/>
     <TableView fx:id="cartTable">

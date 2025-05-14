@@ -1,7 +1,6 @@
-package Objects;
+package Utils;
 import com.google.gson.annotations.SerializedName;
 
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 
 public class Product {
@@ -40,11 +39,14 @@ public class Product {
 
 
     public double getPrezzoSconto() {
-        return Double.parseDouble(prezzoSconto);
+        if(prezzoSconto != null){
+            return Double.parseDouble(prezzoSconto);
+        }
+        return 0;
     }
 
 
     public Image getImmagine() {
-        return new Image("mysterymeatfish.altervista.org/img/food/".concat(immagine));
+        return new Image("https://mysterymeatfish.altervista.org/img/food/".concat(immagine));
     }
 }

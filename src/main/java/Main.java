@@ -1,6 +1,6 @@
-import Controller.SceneManager;
-import Objects.JSonReader;
-import Objects.ProductSerializer;
+import Utils.SceneManager;
+import Utils.JSonReader;
+import Utils.ProductSerializer;
 import javafx.application.Application;
 
 import javafx.fxml.FXMLLoader;
@@ -18,13 +18,10 @@ public class Main extends Application {
             Scene scene = new Scene(loader.load());
             scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
             stage.setScene(scene);
-
-            System.out.println(stage.isMaximized());
             stage.setMaximized(true);
             stage.setResizable(false);
             stage.setTitle("porcodio");
 
-            System.out.println(ProductSerializer.serialize(JSonReader.sendRequest("Carne")));
 
             stage.show();
             // SceneManager.loadScene("Home - MysteryMeatFish","home.fxml",primaryStage);

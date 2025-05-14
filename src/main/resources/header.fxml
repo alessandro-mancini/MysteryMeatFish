@@ -8,7 +8,6 @@
         <ImageView fx:id="logoImage" fitHeight="50" preserveRatio="true" />
         <Label prefHeight="54.0" prefWidth="274.0" styleClass="h3" text="MysteryMeatFish" />
 
-        <!-- Region che si espande orizzontalmente -->
         <Region HBox.hgrow="ALWAYS" />
 
         <Button onAction="#goToHome" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Home" />

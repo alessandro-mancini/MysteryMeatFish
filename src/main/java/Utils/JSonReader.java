@@ -1,4 +1,4 @@
-package Objects;
+package Utils;
 
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -21,8 +21,6 @@ public class JSonReader {
             .addPathSegment("tutti.php")
             .addQueryParameter("tipo", param)
             .build();
-
-        System.out.println(url);
 
         // Costruisce la richiesta HTTP GET
         Request request = new Request.Builder()

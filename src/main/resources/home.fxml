@@ -3,13 +3,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="pane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
+<AnchorPane fx:id="pane" prefHeight="320.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
 
-        <VBox prefHeight="527.0" prefWidth="785.0">
+
+
+        <VBox AnchorPane.bottomAnchor="-172.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <fx:include source="header.fxml" />
-            <Label style="-fx-font-size: 18px;" text="Prodotti in Evidenza"/>
-            <GridPane fx:id="products" hgap="20" vgap="20"/>
 
+            <HBox>
+                <Button id="categoria" text="Tutti"/>
+                <Button id="categoria" text="Carne"/>
+                <Button id="categoria" text="Pesce"/>
+                <Button id="categoria" text="Salumi"/>
+            </HBox>
+
+            <Label style="-fx-font-size: 18px;" text="Prodotti" />
+            <GridPane fx:id="productsGrid" hgap="20" vgap="20" />
         </VBox>
 
 </AnchorPane>
