@@ -8,6 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
@@ -18,6 +21,16 @@ public class HomeController {
 
     @FXML
     GridPane productsGrid;
+    @FXML
+    Button mysterybox;
+    @FXML
+    Button carne;
+    @FXML
+    Button pesce;
+    @FXML
+    Button salumi;
+    @FXML
+    Label labelProdotti;
 
     @FXML
     public void initialize(){
@@ -26,21 +39,37 @@ public class HomeController {
         int column = 0;
         int row = 0;
 
-
-        new Thread(() ->{
-            mostraProdotti(diocane);
-        }).start();
+        mysterybox.setGraphic(createIcon("mysterybox.png",200,100));
+        carne.setGraphic(createIcon("carne.png",200,100));
+        pesce.setGraphic(createIcon("pesce.png",200,100));
+        salumi.setGraphic(createIcon("salumi.png",200,100));
+        labelProdotti.setVisible(false);
 
     }
 
 
+    private ImageView createIcon(String fileName, double width, double height) {
+        ImageView view = new ImageView(loadImage(fileName));
+        view.setFitWidth(width);
+        view.setFitHeight(height);
+        view.setPreserveRatio(true);
+        return view;
+    }
+
+    private Image loadImage(String name){
+        return new Image(getClass().getResource("/img/".concat(name)).toString());
+    }
+
     public void switchCategory(ActionEvent e){
         Button pressed = (Button) e.getSource();
-        String category = pressed.getText();
+        String category = pressed.getId();
 
         productsGrid.getChildren().clear();
         new Thread(() ->{
             mostraProdotti(ProductSerializer.serialize(JSonReader.sendRequest(category)));
+            if(!labelProdotti.isVisible()){
+                labelProdotti.setVisible(true);
+            }
         }).start();
 
     }

@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="pane" prefHeight="320.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
 
 
 
-        <VBox AnchorPane.bottomAnchor="-172.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="-172.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <fx:include source="header.fxml" />
 
-            <HBox>
-                <Button id="categoria" onAction="#switchCategory" text="Tutti" styleClass="btn-primary"/>
-                <Button id="categoria" onAction="#switchCategory" text="Carne" styleClass="btn-primary"/>
-                <Button id="categoria" onAction="#switchCategory" text="Pesce" styleClass="btn-primary"/>
-                <Button id="categoria" onAction="#switchCategory" text="Salumi" styleClass="btn-primary"/>
+
+
+            <Label text="Categorie">
+         <VBox.margin>
+            <Insets bottom="50.0" top="50.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font></Label>
+
+            <HBox alignment="CENTER" spacing="20.0">
+                <Button id="Mystery Box" fx:id="mysterybox" onAction="#switchCategory" prefHeight="100.0" prefWidth="200.0">
+                    <HBox.margin>
+                       <Insets left="20.0" />
+                    </HBox.margin>
+                </Button>
+                <Button id="Carne" fx:id="carne" onAction="#switchCategory" prefHeight="100.0" prefWidth="200.0" styleClass="btn-primary" />
+                <Button id="Pesce" fx:id="pesce" onAction="#switchCategory" prefHeight="100.0" prefWidth="200.0" styleClass="btn-primary" />
+                <Button id="Salumi" fx:id="salumi" onAction="#switchCategory" prefHeight="100.0" prefWidth="200.0" styleClass="btn-primary">
+            <HBox.margin>
+               <Insets right="20.0" />
+            </HBox.margin></Button>
             </HBox>
 
-            <Label style="-fx-font-size: 18px;" text="Prodotti" />
+            <Label fx:id="labelProdotti" text="Prodotti">
+                <VBox.margin>
+                    <Insets bottom="30.0" top="30.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="Calibri Bold" size="36.0" />
+                </font></Label>
             <GridPane fx:id="productsGrid" hgap="20" vgap="20" />
         </VBox>
 

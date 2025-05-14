@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-    <HBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HeaderController" prefHeight="50.0" spacing="10" styleClass="bg-primary">
+<HBox alignment="CENTER" prefHeight="100.0" spacing="20.0" styleClass="bg-light" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HeaderController">
         <ImageView fx:id="logoImage" fitHeight="50" preserveRatio="true" />
-        <Label prefHeight="54.0" prefWidth="274.0" styleClass="h3" text="MysteryMeatFish" />
+        <Label prefHeight="54.0" prefWidth="271.0" text="MysteryMeatFish™">
+      <font>
+         <Font name="Calibri Bold" size="24.0" />
+      </font></Label>
 
         <Region HBox.hgrow="ALWAYS" />
 
-        <Button onAction="#goToHome" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Home" />
+        <Button alignment="CENTER" onAction="#goToHome" prefHeight="50.0" prefWidth="70.0" styleClass="btn-light" text="Home" />
         <Button onAction="#goToRegister" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Register" />
         <Button onAction="#goToLogin" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Login" />
-        <Button onAction="#goToCart" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Carrello" />
+        <Button onAction="#goToCart" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Carrello">
+      <HBox.margin>
+         <Insets right="20.0" />
+      </HBox.margin></Button>
     </HBox>
-
