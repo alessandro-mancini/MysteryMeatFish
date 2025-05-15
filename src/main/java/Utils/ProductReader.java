@@ -1,13 +1,11 @@
 package Utils;
 
-import okhttp3.HttpUrl;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import okhttp3.*;
 
-public class JSonReader {
+public class ProductReader {
 
-    public static String sendRequest(String param){
+    public static String sendRequest(String action, String param) {
+
 
         OkHttpClient client = new OkHttpClient();
 
@@ -15,16 +13,15 @@ public class JSonReader {
 
 
         url = new HttpUrl.Builder()
-            .scheme("https")
-            .host("mysterymeatfish.altervista.org")
-            .addPathSegment("java")
-            .addPathSegment("prodotti.php")
-            .addQueryParameter("tipo", param)
-            .build();
+                .scheme("https")
+                .host("mysterymeatfish.altervista.org")
+                .addPathSegment("java")
+                .addPathSegment("prodotti.php")
+                .addQueryParameter(action, param)
+                .build();
 
         System.out.println(url);
 
-        // Costruisce la richiesta HTTP GET
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -39,8 +36,6 @@ public class JSonReader {
         }
 
     }
-
-
 }
 
 

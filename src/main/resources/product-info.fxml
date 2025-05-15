@@ -1,36 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox prefHeight="300" prefWidth="300" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductInfoController">
-    <VBox spacing="5">
-        <ImageView fx:id="immagine" fitHeight="150" preserveRatio="true" />
-        <Label fx:id="nome" styleClass="text-primary">
+<VBox spacing="10" style="-fx-border-color: gray; -fx-border-width: 1; -fx-border-radius: 3;" styleClass="bg-light" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductInfoController">
+
+
+    <HBox>
+        <ImageView fx:id="immagine" accessibleText="Immagine" fitWidth="200.0" preserveRatio="true">
+      <viewport>
+         <Rectangle2D />
+      </viewport>
+         <HBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </HBox.margin></ImageView>
+    </HBox>
+
+
+            <Label fx:id="nome" styleClass="text-primary" text="Nome Prodotto">
             <font>
                 <Font name="Calibri Bold" size="18.0" />
             </font>
+            <HBox.margin>
+               <Insets left="30.0" />
+            </HBox.margin>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+      <padding>
+         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+      </padding>
         </Label>
 
-        <Label fx:id="tipo" styleClass="text-primary">
+        <Label fx:id="tipo" styleClass="text-danger" text="Tipo Prodotto">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+            <HBox.margin>
+               <Insets left="30.0" />
+            </HBox.margin>
+      <VBox.margin>
+         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+      </VBox.margin>
         </Label>
 
-        <Label fx:id="prezzo">
+
+        <HBox>
+
+        <Label fx:id="prezzo" prefHeight="26.0" prefWidth="100.0" text="Prezzo Prodotto">
          <font>
             <Font size="14.0" />
          </font>
+            <HBox.margin>
+               <Insets left="30.0" />
+            </HBox.margin>
         </Label>
 
-        <Label fx:id="prezzoSconto">
+        <Label fx:id="prezzoSconto" text="Prezzo Sconto">
             <font>
                 <Font size="16.0" />
             </font>
+            <HBox.margin>
+               <Insets left="30.0" />
+            </HBox.margin>
         </Label>
-        <Label fx:id="descrizione" />
-    </VBox>
-</HBox>
+        </HBox>
+    <HBox>
+        <Label fx:id="descrizione" prefWidth="500.0" text="Descrizione: descrizione del prodotto">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding></Label>
+    </HBox>
+
+
+        <HBox>
+            <Button fx:id="decQta" text="-" onAction="#decrease">
+         <HBox.margin>
+            <Insets right="15.0" />
+         </HBox.margin></Button>
+            <Label fx:id="quantity" alignment="CENTER" prefHeight="24.0" prefWidth="19.0" text="1" />
+            <Button fx:id="incQta" text="+" onAction="#increase">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin></Button>
+        </HBox>
+        <Button onAction="#addToCart" text="Aggiungi al Carrello" />
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+
+
+</VBox>

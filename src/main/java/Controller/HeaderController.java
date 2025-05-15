@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class HeaderController {
@@ -19,6 +21,12 @@ public class HeaderController {
     Button cart;
 
 
+    @FXML
+    public void initialize(){
+        home.setGraphic(createIcon("home.svg",70,50));
+        login.setGraphic(createIcon("login.svg",70,50));
+        cart.setGraphic(createIcon("cart.svg",70,50));
+    }
 
     public void goToHome(ActionEvent e){
         Stage stage = (Stage) (((Node)e.getSource()).getScene().getWindow());
@@ -41,5 +49,19 @@ public class HeaderController {
         Stage stage = (Stage) (((Node)e.getSource()).getScene().getWindow());
         SceneManager manager = new SceneManager("Carrello - MysteryMeatFish","cart.fxml",stage);
         manager.loadScene();
+    }
+
+    private ImageView createIcon(String fileName, double width, double height) {
+        ImageView view = new ImageView(loadImage(fileName));
+        view.setFitWidth(width);
+        view.setFitHeight(height);
+        view.setPreserveRatio(true);
+        return view;
+    }
+
+    private Image loadImage(String name){
+        String resource = "/img/".concat(name);
+        System.out.println(resource);
+        return new Image(getClass().getResource(resource).toString());
     }
 }

@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="pane" prefHeight="320.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
+<AnchorPane fx:id="pane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
 
+    <ScrollPane fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
-
-        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="-172.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox alignment="TOP_CENTER">
             <fx:include source="header.fxml" />
 
 
@@ -43,7 +43,8 @@
                 <font>
                     <Font name="Calibri Bold" size="36.0" />
                 </font></Label>
-            <GridPane fx:id="productsGrid" hgap="20" vgap="20" />
+            <GridPane fx:id="productsGrid" alignment="CENTER" hgap="20" vgap="20" />
         </VBox>
+    </ScrollPane>
 
 </AnchorPane>

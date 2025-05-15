@@ -20,7 +20,7 @@
 
         <Button fx:id="home" alignment="CENTER" onAction="#goToHome" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Home" />
         <Button fx:id="login" onAction="#goToLogin" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Login" />
-        <Button fx:id="carrello" onAction="#goToCart" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Carrello">
+        <Button fx:id="cart" onAction="#goToCart" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Carrello">
       <HBox.margin>
          <Insets right="20.0" />
       </HBox.margin></Button>

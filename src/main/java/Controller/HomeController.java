@@ -5,14 +5,12 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,8 +32,6 @@ public class HomeController {
 
     @FXML
     public void initialize(){
-        ArrayList<Product> diocane = ProductSerializer.serialize(JSonReader.sendRequest("tutti")); // carica i prodotti
-
         int column = 0;
         int row = 0;
 
@@ -66,7 +62,7 @@ public class HomeController {
 
         productsGrid.getChildren().clear();
         new Thread(() ->{
-            mostraProdotti(ProductSerializer.serialize(JSonReader.sendRequest(category)));
+            mostraProdotti(ProductSerializer.serialize(ProductReader.sendRequest("tipo",category)));
             if(!labelProdotti.isVisible()){
                 labelProdotti.setVisible(true);
             }
@@ -88,7 +84,7 @@ public class HomeController {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/product-info.fxml"));
 
-                HBox productCard = (HBox) loader.load();
+                VBox productCard = loader.load();
                 ProductInfoController controller = loader.getController();
                 controller.setData(product);
 

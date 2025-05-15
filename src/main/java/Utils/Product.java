@@ -36,6 +36,10 @@ public class Product {
         return Double.parseDouble(prezzo);
     }
 
+    public String getDescrizione(){
+        return descrizione;
+    }
+
 
 
     public double getPrezzoSconto() {

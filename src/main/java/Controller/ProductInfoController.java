@@ -1,6 +1,7 @@
 package Controller;
 
 import Utils.Product;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -18,6 +19,11 @@ public class ProductInfoController {
     private Label prezzoSconto;
     @FXML
     private ImageView immagine;
+    @FXML
+    private Label descrizione;
+
+    @FXML
+    private Label quantity;
 
     public void setData(Product product){
 
@@ -31,10 +37,26 @@ public class ProductInfoController {
             prezzoSconto.getStylesheets().add("text-warning");
         }
         immagine.setImage(product.getImmagine());
+        descrizione.setText(product.getDescrizione());
+
     }
 
     public void addToCart(){
 
+    }
+
+    public void increase(ActionEvent e){
+        int quantita = Integer.parseInt(quantity.getText());
+        if(quantita < 50){
+            quantity.setText(String.valueOf(quantita + 1));
+        }
+    }
+
+    public void decrease(ActionEvent e){
+        int quantita = Integer.parseInt(quantity.getText());
+        if(quantita > 1){
+            quantity.setText(String.valueOf(quantita - 1));
+        }
     }
 
 }

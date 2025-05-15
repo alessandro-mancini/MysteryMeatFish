@@ -2,6 +2,7 @@ package Utils;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
@@ -23,9 +24,10 @@ public class SceneManager {
 
     public void loadScene(){
 
-
         double height;
         double width;
+
+        stage.getIcons().add(new Image(getClass().getResource("/img/logo.png").toString()));
 
         if(!stage.isMaximized()){
             width = stage.getWidth();
