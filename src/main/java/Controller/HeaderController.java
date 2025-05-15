@@ -33,15 +33,10 @@ public class HeaderController {
         SceneManager manager = new SceneManager("Home - MysteryMeatFish","home.fxml",stage);
         manager.loadScene();
     }
-    public void goToRegister(ActionEvent e){
-        Stage stage = (Stage) (((Node)e.getSource()).getScene().getWindow());
-        SceneManager manager = new SceneManager("Registrati - MysteryMeatFish","register.fxml",stage);
-        manager.loadScene();
 
-    }
     public void goToLogin(ActionEvent e){
         Stage stage = (Stage) (((Node)e.getSource()).getScene().getWindow());
-        SceneManager manager = new SceneManager("Accedi - MysteryMeatFish","login.fxml",stage);
+        SceneManager manager = new SceneManager("Aggiungi Prodotto - MysteryMeatFish", "aggiungi.fxml",stage);
         manager.loadScene();
 
     }

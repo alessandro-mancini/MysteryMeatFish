@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.RegisterController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.ProductAddController">
     <VBox AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <fx:include source="header.fxml"/>
         <Label text="Nome:"/>

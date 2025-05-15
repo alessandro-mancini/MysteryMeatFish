@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import javafx.scene.image.Image;
 
 public class Product {
+    @SerializedName("id_prodotto")
+    private int id;
     @SerializedName("tipo")
     private String tipo;
     @SerializedName("nome")
@@ -17,6 +19,10 @@ public class Product {
     @SerializedName("descrizione")
     private String descrizione;
 
+
+    public int getId(){
+        return id;
+    }
 
     // Getter e Setter
     public String getTipo() {
