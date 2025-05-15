@@ -2,10 +2,22 @@ package Controller;
 
 import Utils.SceneManager;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class HeaderController {
+
+    @FXML
+    Button home;
+
+    @FXML
+    Button login;
+
+    @FXML
+    Button cart;
+
 
 
     public void goToHome(ActionEvent e){
