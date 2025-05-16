@@ -20,7 +20,6 @@ public class ProductReader {
                 .addQueryParameter(action, param)
                 .build();
 
-        System.out.println(url);
 
         Request request = new Request.Builder()
                 .url(url)

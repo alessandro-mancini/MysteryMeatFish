@@ -18,6 +18,8 @@ public class ProductAddController {
 
     @FXML
     private TextField prezzoScontoField;
+    @FXML
+    private TextField immagineField;
 
     @FXML
     private TextArea descrizioneArea;
@@ -28,6 +30,7 @@ public class ProductAddController {
         String tipo = tipoComboBox.getValue();
         String prezzoText = prezzoField.getText().trim();
         String prezzoScontoText = prezzoScontoField.getText().trim();
+        String immagine = immagineField.getText().trim();
         String descrizione = descrizioneArea.getText().trim();
 
         // Validazioni
@@ -49,7 +52,8 @@ public class ProductAddController {
             return;
         }
 
-        boolean success = DBEditor.addProduct(nome, tipo, descrizione, prezzo, prezzoSconto);
+        boolean success = DBEditor.addProduct(tipo, nome, descrizione, prezzo, prezzoSconto, immagine);
+
 
         if (success) {
             showAlert(AlertType.INFORMATION, "Successo", "Prodotto aggiunto con successo.");
@@ -73,6 +77,7 @@ public class ProductAddController {
         prezzoField.clear();
         prezzoScontoField.clear();
         descrizioneArea.clear();
+        immagineField.clear();
     }
 }
 

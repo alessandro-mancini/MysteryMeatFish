@@ -34,15 +34,15 @@ public class HeaderController {
         manager.loadScene();
     }
 
-    public void goToLogin(ActionEvent e){
+    public void addProduct(ActionEvent e){
         Stage stage = (Stage) (((Node)e.getSource()).getScene().getWindow());
         SceneManager manager = new SceneManager("Aggiungi Prodotto - MysteryMeatFish", "aggiungi.fxml",stage);
         manager.loadScene();
 
     }
-    public void goToCart(ActionEvent e){
+    public void searchProduct(ActionEvent e){
         Stage stage = (Stage) (((Node)e.getSource()).getScene().getWindow());
-        SceneManager manager = new SceneManager("Carrello - MysteryMeatFish","cart.fxml",stage);
+        SceneManager manager = new SceneManager("Cerca - MysteryMeatFish","cerca.fxml",stage);
         manager.loadScene();
     }
 
@@ -56,7 +56,6 @@ public class HeaderController {
 
     private Image loadImage(String name){
         String resource = "/img/".concat(name);
-        System.out.println(resource);
         return new Image(getClass().getResource(resource).toString());
     }
 }

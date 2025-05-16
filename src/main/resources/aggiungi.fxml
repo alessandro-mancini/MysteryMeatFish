@@ -1,70 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
 <AnchorPane prefHeight="500.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductAddController">
 
-    <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="614.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
         <fx:include source="header.fxml" />
 
-        <Label text="Aggiungi Prodotto">
+        <VBox alignment="TOP_CENTER" prefWidth="300" spacing="25">
+
+
+
+            <Label style="-fx-font-family: 'Calibri'; -fx-font-weight: bold; -fx-font-size: 32;" text="Aggiungi Prodotto">
+                <VBox.margin>
+                    <Insets bottom="30.0" top="30.0" />
+                </VBox.margin>
+            </Label>
+
+            <HBox alignment="CENTER">
+
+            <TextField fx:id="nomeField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" promptText="Nome del prodotto" style="-fx-font-family: 'Calibri'; -fx-font-size: 16;">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin></TextField>
+
+            <ComboBox fx:id="tipoComboBox" prefHeight="40" prefWidth="300" promptText="Tipo" style="-fx-font-family: 'Calibri'; -fx-font-size: 16;">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Carne" />
+                        <String fx:value="Pesce" />
+                        <String fx:value="Salumi" />
+                        <String fx:value="Mystery Box" />
+                    </FXCollections>
+                </items>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </ComboBox>
+
+            </HBox>
+
+            <HBox alignment="CENTER">
+            <TextField fx:id="prezzoField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300" promptText="Prezzo" style="-fx-font-family: 'Calibri'; -fx-font-size: 16;">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin></TextField>
+
+            <TextField fx:id="prezzoScontoField" prefHeight="60.0" prefWidth="300" promptText="Prezzo scontato (facoltativo)" style="-fx-font-family: 'Calibri'; -fx-font-size: 16;">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin></TextField>
+
+            </HBox>
+
+            <HBox alignment="CENTER">
+            <TextField fx:id="immagineField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="167.0" promptText="Nome immagine" style="-fx-font-family: 'Calibri'; -fx-font-size: 16;">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin></TextField>
+
+            <TextArea fx:id="descrizioneArea" prefHeight="60.0" prefWidth="300" promptText="Descrizione" style="-fx-font-family: 'Calibri'; -fx-font-size: 14;" wrapText="true">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin></TextArea>
+
+            </HBox>
+
+            <Button alignment="CENTER" onAction="#handleAddProduct" prefHeight="45" prefWidth="200" style="-fx-font-family: 'Calibri'; -fx-font-weight: bold; -fx-font-size: 16;" styleClass="btn-primary" text="Aggiungi Prodotto">
+                <padding>
+                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
             <VBox.margin>
-                <Insets top="30.0" />
+               <Insets bottom="70.0" />
             </VBox.margin>
-            <font>
-                <Font name="Calibri Bold" size="32.0" />
-            </font>
-        </Label>
+            </Button>
 
-        <TextField fx:id="nomeField" promptText="Nome del prodotto" prefWidth="300.0">
-            <font>
-                <Font name="Calibri" size="16.0" />
-            </font>
-        </TextField>
 
-        <ComboBox fx:id="tipoComboBox" promptText="Tipo" prefWidth="300.0">
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="Carne" />
-                    <String fx:value="Pesce" />
-                    <String fx:value="Salumi" />
-                    <String fx:value="Mystery Box" />
-                </FXCollections>
-            </items>
-        </ComboBox>
-
-        <TextField fx:id="prezzoField" promptText="Prezzo" prefWidth="300.0">
-            <font>
-                <Font name="Calibri" size="16.0" />
-            </font>
-        </TextField>
-
-        <TextField fx:id="prezzoScontoField" promptText="Prezzo scontato (facoltativo)" prefWidth="300.0">
-            <font>
-                <Font name="Calibri" size="16.0" />
-            </font>
-        </TextField>
-
-        <TextArea fx:id="descrizioneArea" promptText="Descrizione" prefWidth="300.0" prefHeight="100.0">
-            <font>
-                <Font name="Calibri" size="14.0" />
-            </font>
-        </TextArea>
-
-        <Button text="Aggiungi Prodotto" onAction="#handleAddProduct" styleClass="btn-primary">
-            <padding>
-                <Insets top="10.0" bottom="10.0" left="20.0" right="20.0" />
-            </padding>
-            <font>
-                <Font name="Calibri Bold" size="16.0" />
-            </font>
-        </Button>
+        </VBox>
 
     </VBox>
 </AnchorPane>

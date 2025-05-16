@@ -7,21 +7,23 @@
 <?import javafx.scene.text.*?>
 
 <HBox alignment="CENTER" prefHeight="100.0" spacing="20.0" styleClass="bg-primary" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HeaderController">
-        <ImageView fx:id="logoImage" fitHeight="50" preserveRatio="true" />
-        <Label prefHeight="54.0" prefWidth="271.0" text="MysteryMeatFish™" textFill="#eeeeee">
-      <font>
-         <Font name="Calibri Bold" size="24.0" />
-      </font>
-      <HBox.margin>
-         <Insets />
-      </HBox.margin></Label>
+    <ImageView fx:id="logoImage" fitHeight="50" preserveRatio="true" />
 
-        <Region HBox.hgrow="ALWAYS" />
+    <Label prefHeight="54.0" prefWidth="271.0" text="MysteryMeatFish™" textFill="#eeeeee" style="-fx-font-family: 'Calibri'; -fx-font-weight: bold; -fx-font-size: 24;">
+        <HBox.margin>
+            <Insets />
+        </HBox.margin>
+    </Label>
 
-        <Button fx:id="home" alignment="CENTER" onAction="#goToHome" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Home" />
-        <Button fx:id="login" onAction="#goToLogin" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Login" />
-        <Button fx:id="cart" onAction="#goToCart" prefHeight="50.0" prefWidth="70.0" styleClass="btn-primary" text="Carrello">
-      <HBox.margin>
-         <Insets right="20.0" />
-      </HBox.margin></Button>
-    </HBox>
+    <Region HBox.hgrow="ALWAYS" />
+
+    <Button fx:id="home" alignment="CENTER" onAction="#goToHome" styleClass="btn-primary" text="Prodotti" textFill="#eeeeee" style="-fx-font-family: 'Calibri'; -fx-font-weight: bold; -fx-font-size: 18;" />
+
+    <Button fx:id="login" alignment="CENTER" onAction="#addProduct" styleClass="btn-primary" text="Aggiungi" textFill="#eeeeee" style="-fx-font-family: 'Calibri'; -fx-font-weight: bold; -fx-font-size: 18;" />
+
+    <Button fx:id="cart" alignment="CENTER" onAction="#searchProduct" styleClass="btn-primary" text="Cerca" textFill="#eeeeee" style="-fx-font-family: 'Calibri'; -fx-font-weight: bold; -fx-font-size: 18;">
+        <HBox.margin>
+            <Insets right="20.0" />
+        </HBox.margin>
+    </Button>
+</HBox>

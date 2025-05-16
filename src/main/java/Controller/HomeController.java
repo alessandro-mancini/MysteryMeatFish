@@ -35,12 +35,11 @@ public class HomeController {
         int column = 0;
         int row = 0;
 
-        mysterybox.setGraphic(createIcon("mysterybox.png",200,100));
-        carne.setGraphic(createIcon("carne.png",200,100));
-        pesce.setGraphic(createIcon("pesce.png",200,100));
-        salumi.setGraphic(createIcon("salumi.png",200,100));
-        labelProdotti.setVisible(false);
-
+        mysterybox.setGraphic(createIcon("mysterybox.png",250,150));
+        mysterybox.setBorder(null);
+        carne.setGraphic(createIcon("carne.png",250,150));
+        pesce.setGraphic(createIcon("pesce.png",250,150));
+        salumi.setGraphic(createIcon("salumi.png",250,150));
     }
 
 
@@ -63,16 +62,12 @@ public class HomeController {
         productsGrid.getChildren().clear();
         new Thread(() ->{
             mostraProdotti(ProductSerializer.serialize(ProductReader.sendRequest("tipo",category)));
-            if(!labelProdotti.isVisible()){
-                labelProdotti.setVisible(true);
-            }
         }).start();
 
     }
 
     @FXML
     public void mostraProdotti(ArrayList<Product> products) {
-
 
 
 
